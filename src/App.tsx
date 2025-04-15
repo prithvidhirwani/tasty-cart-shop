@@ -52,7 +52,16 @@ const App = () => {
       <Navbar cartItemsCount={cartItems.reduce((sum, item) => sum + item.quantity, 0)} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products onAddToCart={addToCart} />} />
+        <Route 
+          path="/products" 
+          element={
+            <Products 
+              onAddToCart={addToCart} 
+              cartItems={cartItems} 
+              updateQuantity={updateQuantity} 
+            />
+          } 
+        />
         <Route
           path="/cart"
           element={
