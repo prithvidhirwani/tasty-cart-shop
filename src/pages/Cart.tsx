@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Minus, Plus, Trash2 } from 'lucide-react';
@@ -36,7 +35,7 @@ const Cart = ({ items, updateQuantity, removeItem }: CartProps) => {
             <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
             <div className="flex-1">
               <h3 className="font-medium text-gray-900">{item.name}</h3>
-              <p className="text-green-600">${item.price.toFixed(2)}</p>
+              <p className="text-green-600">₹{item.price}</p>
             </div>
             <div className="flex items-center gap-2">
               <Button
@@ -69,7 +68,7 @@ const Cart = ({ items, updateQuantity, removeItem }: CartProps) => {
       </div>
       <div className="mt-6 flex items-center justify-between">
         <div className="text-lg font-semibold">
-          Total: ${total.toFixed(2)}
+          Total: ₹{total}
         </div>
         <Link to="/checkout">
           <Button className="bg-green-500 hover:bg-green-600">
